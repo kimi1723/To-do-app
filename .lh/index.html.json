@@ -1,0 +1,26 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1680222232918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680222248122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <title>ToDo List</title>\r\n     <script src=\"https://kit.fontawesome.com/327a0d490c.js\" crossorigin=\"anonymous\"></script>\r\n     <link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext\"\r\n         rel=\"stylesheet\">\r\n-    <link rel=\"stylesheet\" href=\"\">\r\n+    <link rel=\"stylesheet\" href=\"/dist/css/main.min.css\">\r\n </head>\r\n \r\n <body>\r\n \r\n"
+                },
+                {
+                    "date": 1680222254314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,8 @@\n         </div>\r\n     </div>\r\n \r\n \r\n-    <script src=\"script.js\"></script>\r\n+    <script src=\"/dist/js/app.min.js\"></script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1680222232918,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"pl\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>ToDo List</title>\r\n    <script src=\"https://kit.fontawesome.com/327a0d490c.js\" crossorigin=\"anonymous\"></script>\r\n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext\"\r\n        rel=\"stylesheet\">\r\n    <link rel=\"stylesheet\" href=\"\">\r\n</head>\r\n\r\n<body>\r\n\r\n    <div class=\"todo\">\r\n        <div class=\"header\">\r\n            <h1>ToDo List</h1>\r\n            <input type=\"text\" class=\"todo-input\" placeholder=\"Wpisz treść zadania...\">\r\n            <button class=\"add-btn\">Add</button>\r\n        </div>\r\n\r\n        <div class=\"todo-list\">\r\n            <h3>Lista zadań:</h3>\r\n            <p class=\"alert-info\">Brak zadań na liście.</p>\r\n            <ul>\r\n                <li id=\"test\">Wypić kawę <div class=\"tools\">\r\n                        <button class=\"complete\"><i class=\"fas fa-check\"></i></button><button class=\"edit\">EDIT</button><button class=\"delete\"><i class=\"fas fa-times\"></i></button>\r\n                    </div>\r\n                </li>\r\n                <li id=\"test2\">Zjeść śniadanie <div class=\"tools\">\r\n                        <button class=\"complete\"><i class=\"fas fa-check\"></i></button>\r\n                        <button class=\"edit\">EDIT</button>\r\n                        <button class=\"delete\"><i class=\"fas fa-times\"></i></button>\r\n                    </div>\r\n                </li>\r\n                <li id=\"test3\">Umyć okna <div class=\"tools\">\r\n                        <button class=\"complete\"><i class=\"fas fa-check\"></i></button><button class=\"edit\">EDIT</button>\r\n                        <button class=\"delete\"><i class=\"fas fa-times\"></i></button>\r\n                    </div>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"popup\">\r\n        <h3>Edytuj zadanie:</h3>\r\n        <div class=\"popup-body\">\r\n            <p class=\"popup-info\"></p>\r\n            <input type=\"text\" class=\"popup-input\" placeholder=\"Wprowadź nową treść zadania...\">\r\n            <button class=\"popup-btn accept\">Zatwierdź</button>\r\n            <button class=\"popup-btn cancel\">Anuluj</button>\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <script src=\"script.js\"></script>\r\n</body>\r\n\r\n</html>"
+        }
+    ]
+}
