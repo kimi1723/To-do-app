@@ -1,0 +1,77 @@
+.to-do-assignments {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding-bottom: 1em;
+	color: #1d1c1c;
+	width: 100%;
+
+	&__heading {
+		font-size: 2.5rem;
+		margin-bottom: 0.6em;
+	}
+}
+
+.to-do-assignment {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2em;
+	margin-bottom: 1em;
+	padding: 0.8em;
+	width: 100%;
+	background-color: #f3f3f3;
+
+	&__text {
+		width: 65%;
+		font-size: 1.6rem;
+	}
+
+	&-buttons {
+		display: flex;
+		justify-content: space-between;
+		width: 35%;
+
+		&__button {
+			background: transparent;
+			border: none;
+			transition: color 0.3s;
+			cursor: pointer;
+
+			&--done,
+			&--remove {
+				font-size: 2rem;
+			}
+
+			&--done {
+				color: #76ba1b;
+
+				&:hover,
+				&:focus {
+					color: #00ff00;
+				}
+			}
+
+			&--remove {
+				color: #8d0101;
+
+				&:hover,
+				&:focus {
+					color: #f00;
+				}
+			}
+
+			&--edit {
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				color: #1560bd;
+
+				&:hover,
+				&:focus {
+					color: #0197f6;
+				}
+			}
+		}
+	}
+}

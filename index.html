@@ -1,60 +1,309 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo List</title>
-    <script src="https://kit.fontawesome.com/327a0d490c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/dist/css/main.min.css">
+    <title>To do app</title>
+    <meta name="description" content="To do app">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/style.min.css">
+    <script src="https://kit.fontawesome.com/b106b5fdab.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <main class="to-do">
+        <div class="to-do-header">
+            <h1 class="to-do-header__heading">To do app</h1>
 
-    <div class="todo">
-        <div class="header">
-            <h1>ToDo List</h1>
-            <input type="text" class="todo-input" placeholder="Wpisz treść zadania...">
-            <button class="add-btn">Add</button>
+            <input type="text" class="to-do-header__input" placeholder="Enter the assignment">
+            <button class="to-do-header__add-button">Add</button>
         </div>
 
-        <div class="todo-list">
-            <h3>Lista zadań:</h3>
-            <p class="alert-info">Brak zadań na liście.</p>
-            <ul>
-                <li id="test">Wypić kawę <div class="tools">
-                        <button class="complete"><i class="fas fa-check"></i></button><button
-                            class="edit">EDIT</button><button class="delete"><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li id="test2">Zjeść śniadanie <div class="tools">
-                        <button class="complete"><i class="fas fa-check"></i></button>
-                        <button class="edit">EDIT</button>
-                        <button class="delete"><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li id="test3">Umyć okna <div class="tools">
-                        <button class="complete"><i class="fas fa-check"></i></button><button class="edit">EDIT</button>
-                        <button class="delete"><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-            </ul>
+        <div class="to-do-assignments">
+            <h2 class="to-do-assignments__heading">Assignments list:</h2>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x</p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="to-do-assignment">
+                <p class="to-do-assignment__text">zrobic x </p>
+
+                <div class="to-do-assignment-buttons">
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--done"><i
+                            class="fa-solid fa-check"></i></button>
+                    <button
+                        class="to-do-assignment-buttons__button to-do-assignment-buttons__button--edit">Edit</button>
+                    <button class="to-do-assignment-buttons__button to-do-assignment-buttons__button--remove"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
         </div>
+    </main>
+
+    <div class="to-do-edit-assignment">
+        <h2 class="to-do-edit-assignment__heading">Edit assignment:</h2>
+        <input type="text" class="to-do-edit-assignment__input">
+
+        <button class="to-do-edit-assignment__button to-do-edit-assignment__button--accept">Accept</button>
+        <button class="to-do-edit-assignment__button to-do-edit-assignment__button--cancel">Cancel</button>
     </div>
-
-    <div class="popup">
-        <h3>Edytuj zadanie:</h3>
-        <div class="popup-body">
-            <p class="popup-info"></p>
-            <input type="text" class="popup-input" placeholder="Wprowadź nową treść zadania...">
-            <button class="popup-btn accept">Zatwierdź</button>
-            <button class="popup-btn cancel">Anuluj</button>
-        </div>
-    </div>
-
 
     <script src="/dist/js/app.min.js"></script>
 </body>

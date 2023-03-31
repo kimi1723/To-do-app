@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/sass/to-do/_main.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1680260713778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680260772813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n .to-do {\r\n \tbackground-color: #fff;\r\n+    width: 90%;\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1680260778304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n .to-do {\r\n-\twidth: 90%;\r\n+\twidth: 100%;\r\n \tbackground-color: #fff;\r\n }\r\n"
+                },
+                {
+                    "date": 1680260783894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n .to-do {\r\n+    padding: 1em;\r\n \twidth: 100%;\r\n \tbackground-color: #fff;\r\n }\r\n"
+                }
+            ],
+            "date": 1680260713778,
+            "name": "Commit-0",
+            "content": ".to-do {\r\n\tbackground-color: #fff;\r\n}"
+        }
+    ]
+}

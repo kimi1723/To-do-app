@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/sass/_general.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1680260237087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680260270210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,8 @@\n \tjustify-content: center;\r\n \talign-items: center;\r\n \tpadding: 0 1em;\r\n \tmin-height: 100vh;\r\n+    background-color: #ddd;\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1680260277297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \tjustify-content: center;\r\n \talign-items: center;\r\n \tpadding: 0 1em;\r\n \tmin-height: 100vh;\r\n-\tbackground-color: #ddd;\r\n+\tbackground-color: rgb(250,250,250);\r\n }\r\n"
+                },
+                {
+                    "date": 1680260306048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \tbackground-color: rgb(250, 250, 250);\r\n }\r\n \r\n button {\r\n-    \r\n+    background: none;\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1680260237087,
+            "name": "Commit-0",
+            "content": "*,\r\n*::before,\r\n*::after {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tbox-sizing: border-box;\r\n}\r\n\r\nbody {\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\tpadding: 0 1em;\r\n\tmin-height: 100vh;\r\n}\r\n\r\n\r\n"
+        }
+    ]
+}

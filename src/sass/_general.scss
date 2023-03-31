@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 5em 1.5em;
+	min-height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	background-color: #fffdfd;
+	background: rgb(255, 255, 255);
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 253, 253, 1) 50%,
+		rgba(240, 240, 246, 1) 100%
+	);
+}
