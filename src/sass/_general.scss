@@ -11,6 +11,7 @@ html {
 }
 
 body {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -25,4 +26,10 @@ body {
 		rgba(255, 253, 253, 1) 50%,
 		rgba(240, 240, 246, 1) 100%
 	);
+}
+
+@media (min-width: 576px) {
+	body {
+		padding: 10em;
+	}
 }

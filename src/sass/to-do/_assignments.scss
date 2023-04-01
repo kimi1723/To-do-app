@@ -21,17 +21,16 @@
 	margin-bottom: 1em;
 	padding: 0.8em;
 	width: 100%;
-	background-color: #f3f3f3;
 
 	&__text {
-		width: 65%;
+		width: clamp(100px, 65%, 100%);
 		font-size: 1.6rem;
 	}
 
 	&-buttons {
 		display: flex;
 		justify-content: space-between;
-		width: 35%;
+		width: clamp(90px, 35%, 100px);
 
 		&__button {
 			background: transparent;
@@ -70,6 +69,36 @@
 				&:hover,
 				&:focus {
 					color: #0197f6;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.to-do-assignments {
+		&__heading {
+			font-size: 3.5rem;
+		}
+	}
+
+	.to-do-assignment {
+		&__text {
+			font-size: 1.8rem;
+			width: clamp(100px, 70%, 100%);
+		}
+
+		&-buttons {
+			width: clamp(90px, 30%, 120px);
+
+			&__button {
+				&--done,
+				&--remove {
+					font-size: 2.3rem;
+				}
+
+				&--edit {
+					font-size: 1.8rem;
 				}
 			}
 		}
