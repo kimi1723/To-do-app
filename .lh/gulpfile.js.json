@@ -1,0 +1,22 @@
+{
+    "sourceFile": "gulpfile.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1680452739056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1680452752781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n \t\t.pipe(\r\n \t\t\tts({\r\n \t\t\t\tnoImplicitAny: true,\r\n \t\t\t\toutFile: 'app.js',\r\n-\t\t\t\ttarget: ''\r\n+\t\t\t\ttarget: 'ES6'\r\n \t\t\t}),\r\n \t\t)\r\n \t\t.pipe(\r\n \t\t\tbabel({\r\n"
+                }
+            ],
+            "date": 1680452739056,
+            "name": "Commit-0",
+            "content": "const { src, dest, series, parallel, watch } = require('gulp');\r\nconst sass = require('gulp-sass')(require('sass'));\r\nconst cssnano = require('gulp-cssnano');\r\nconst autoprefixer = require('gulp-autoprefixer');\r\nconst rename = require('gulp-rename');\r\nconst babel = require('gulp-babel');\r\nconst uglify = require('gulp-uglify');\r\nconst imagemin = require('gulp-imagemin');\r\nconst sourcemaps = require('gulp-sourcemaps');\r\nconst clean = require('gulp-clean');\r\nconst kit = require('gulp-kit');\r\nconst ts = require('gulp-typescript');\r\n\r\nconst browserSync = require('browser-sync').create();\r\nconst reload = browserSync.reload;\r\n\r\nconst paths = {\r\n\thtml: './html/**/*.kit',\r\n\tsass: './src/sass/**/*.scss',\r\n\tjs: './src/js/**/*.js',\r\n\timg: './src/img/*/*/*',\r\n\tts: './src/ts/**/*.ts',\r\n\tdist: './dist',\r\n\tsassDest: './dist/css',\r\n\tjsDest: './dist/js',\r\n\timgDest: './dist/img',\r\n};\r\n\r\nconst sassCompiler = done => {\r\n\treturn src(paths.sass)\r\n\t\t.pipe(sourcemaps.init())\r\n\t\t.pipe(sass().on('error', sass.logError))\r\n\t\t.pipe(autoprefixer())\r\n\t\t.pipe(cssnano())\r\n\t\t.pipe(\r\n\t\t\trename({\r\n\t\t\t\tsuffix: '.min',\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(sourcemaps.write())\r\n\t\t.pipe(dest(paths.sassDest));\r\n\tdone();\r\n};\r\n\r\nconst javaScript = done => {\r\n\treturn src(paths.js)\r\n\t\t.pipe(sourcemaps.init())\r\n\t\t.pipe(\r\n\t\t\tbabel({\r\n\t\t\t\tpresets: ['@babel/env'],\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(uglify())\r\n\t\t.pipe(\r\n\t\t\trename({\r\n\t\t\t\tsuffix: '.min',\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(sourcemaps.write())\r\n\t\t.pipe(dest(paths.jsDest));\r\n\tdone();\r\n};\r\n\r\nconst tsToJs = done => {\r\n\treturn src(paths.ts)\r\n\t\t.pipe(sourcemaps.init())\r\n\t\t.pipe(\r\n\t\t\tts({\r\n\t\t\t\tnoImplicitAny: true,\r\n\t\t\t\toutFile: 'app.js',\r\n\t\t\t\ttarget: ''\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(\r\n\t\t\tbabel({\r\n\t\t\t\tpresets: ['@babel/env'],\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(uglify())\r\n\t\t.pipe(\r\n\t\t\trename({\r\n\t\t\t\tsuffix: '.min',\r\n\t\t\t}),\r\n\t\t)\r\n\t\t.pipe(sourcemaps.write())\r\n\t\t.pipe(dest(paths.jsDest));\r\n\tdone();\r\n};\r\n\r\nconst convertImages = done => {\r\n\treturn src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));\r\n\tdone();\r\n};\r\n\r\nconst handleKits = done => {\r\n\treturn src(paths.html).pipe(kit()).pipe(dest('./'));\r\n\tdone();\r\n};\r\n\r\nconst cleanStuff = done => {\r\n\treturn src(paths.dist, { read: false }).pipe(clean());\r\n\tdone();\r\n};\r\n\r\nconst startBrowserSync = done => {\r\n\tbrowserSync.init({\r\n\t\tserver: {\r\n\t\t\tbaseDir: './',\r\n\t\t},\r\n\t\tbrowser: 'firefox',\r\n\t\tnotify: false,\r\n\t});\r\n\r\n\tdone();\r\n};\r\n\r\nconst watchForChanges = done => {\r\n\twatch('./*.html').on('change', reload);\r\n\twatch([paths.html, paths.sass, paths.ts], parallel(handleKits, sassCompiler, tsToJs)).on('change', reload);\r\n\twatch(paths.img, convertImages).on('change', reload);\r\n\tdone();\r\n};\r\n\r\nconst mainFunctions = parallel(handleKits, sassCompiler, tsToJs, convertImages);\r\n\r\nexports.cleanStuff = cleanStuff;\r\nexports.default = series(mainFunctions, startBrowserSync, watchForChanges);\r\n"
+        }
+    ]
+}

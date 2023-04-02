@@ -68,6 +68,7 @@ const tsToJs = done => {
 			ts({
 				noImplicitAny: true,
 				outFile: 'app.js',
+				target: 'ES6',
 			}),
 		)
 		.pipe(

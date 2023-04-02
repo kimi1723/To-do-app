@@ -10,7 +10,8 @@ const cancelEditBtn = document.querySelector('.to-do-edit-assignment__button--ca
 let toDoAssignmentID: number = 1,
 	assignmentText: HTMLParagraphElement,
 	actualAssignment: HTMLDivElement,
-	assignmentID: string;
+	assignmentID: string,
+	allInteractiveElements: (HTMLButtonElement | HTMLInputElement)[] = [];
 
 const addToDo = (): void => {
 	if (validateToDo() === false) return;
@@ -44,7 +45,7 @@ const createToDoBody = (): void => {
 		'.to-do-assignment-buttons__button--remove',
 	) as HTMLButtonElement;
 
-	toDoAssignmentContainer.addEventListener('click', functionalBtns);
+	toDoAssignmentContainer.addEventListener('click', btnsFunctions);
 	toDoAssignmentContainer.dataset.id = toDoAssignmentID.toString();
 
 	toDoAssignmentText.textContent = toDoInput.value;
@@ -59,7 +60,7 @@ const clearToDoInput = (): void => {
 	toDoInput.value = '';
 };
 
-const functionalBtns = (e: Event) => {
+const btnsFunctions = (e: Event) => {
 	actualAssignment = e.currentTarget as HTMLDivElement;
 	const assignmentDoneButton = actualAssignment.querySelector(
 		'.to-do-assignment-buttons__button--done',
@@ -121,13 +122,23 @@ const cancelEdit = (): void => {
 };
 
 const showEditPanel = (): void => {
-	// const toDoMainApp = document.querySelector('.to-do');
-	// toDoMainApp?.classList.add('to-do--inactive');
+	allInteractiveElements = [];
+	const allButtons = document.querySelectorAll(
+		'button:not(.to-do-edit-assignment__button)',
+	) as NodeListOf<HTMLButtonElement>;
+
+	allInteractiveElements.push(...allButtons);
+	allInteractiveElements.push(toDoInput);
+
+	allInteractiveElements.forEach(el => (el.tabIndex = -1));
+
 	editAssignmentContainer.classList.add('to-do-edit-assignment--active');
 	heroBG.classList.add('to-do-edit-assignment-hero-bg--active');
 };
 
 const hideEditPanel = (): void => {
+	allInteractiveElements.forEach(el => (el.tabIndex = 0));
+
 	editAssignmentContainer.classList.remove('to-do-edit-assignment--active');
 	heroBG.classList.remove('to-do-edit-assignment-hero-bg--active');
 };
@@ -141,7 +152,7 @@ const loadStoragedToDos = () => {
 	}
 
 	const toDos: NodeListOf<HTMLDivElement> = document.querySelectorAll('.to-do-assignment');
-	toDos.forEach(toDo => toDo.addEventListener('click', functionalBtns));
+	toDos.forEach(toDo => toDo.addEventListener('click', btnsFunctions));
 };
 
 toDoAddBtn.addEventListener('click', addToDo);
