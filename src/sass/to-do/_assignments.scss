@@ -25,6 +25,12 @@
 	&__text {
 		width: clamp(100px, 65%, 100%);
 		font-size: 1.6rem;
+
+		&--done {
+			font-style: italic;
+			font-weight: lighter;
+			text-decoration: line-through;
+		}
 	}
 
 	&-buttons {
