@@ -1,5 +1,6 @@
 const toDoAddBtn = document.querySelector('.to-do-header__add-button') as HTMLButtonElement;
 const toDoInput = document.querySelector('.to-do-header__input') as HTMLInputElement;
+const toDoAssignmentsContainer = document.querySelector('.to-do-assignments') as HTMLDivElement;
 let toDoAssignmentID: number = 1;
 
 const validateToDo = (): boolean => {
@@ -20,7 +21,7 @@ const validateToDo = (): boolean => {
 
 const createToDoBody = (): void => {
 	const template = document.querySelector('.to-do-assignment-template') as HTMLTemplateElement;
-	const toDoAssignmentsContainer = document.querySelector('.to-do-assignments') as HTMLDivElement;
+
 	const toDoAssignment = template.content.cloneNode(true) as HTMLElement;
 	const toDoAssignmentText = toDoAssignment.querySelector('.to-do-assignment__text') as HTMLParagraphElement;
 	const toDoAssignmentContainer = toDoAssignment.querySelector('.to-do-assignment') as HTMLDivElement;
@@ -30,6 +31,8 @@ const createToDoBody = (): void => {
 	toDoAssignmentText.textContent = toDoInput.value;
 
 	toDoAssignmentsContainer.append(toDoAssignment);
+
+	localStorage.setItem(`${toDoAssignmentID}`, toDoAssignmentContainer.outerHTML);
 	toDoAssignmentID++;
 };
 
@@ -38,4 +41,17 @@ const addToDo = (): void => {
 	createToDoBody();
 };
 
+const loadStoragedToDos = () => {
+	const storagedToDos = { ...localStorage };
+
+	for (const toDo in storagedToDos) {
+		toDoAssignmentsContainer.innerHTML += storagedToDos[toDo];
+
+		toDoAssignmentID = Number(toDo) + 1;
+	}
+};
+
 toDoAddBtn.addEventListener('click', addToDo);
+
+window.addEventListener('DOMContentLoaded', loadStoragedToDos);
+
