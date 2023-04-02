@@ -2,9 +2,9 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-columns: auto;
-	grid-template-rows: repeat(2, auto);
+	grid-template-rows: repeat(3, auto);
 	gap: 2em;
-	margin-bottom: 2.5em;
+	margin-bottom: 1em;
 	width: 100%;
 	min-width: 0;
 	min-height: 0;
@@ -60,12 +60,34 @@
 		justify-self: end;
 		cursor: pointer;
 	}
+
+	&__error {
+		opacity: 0;
+		grid-column: 1 / -1;
+		grid-row: 3 / 4;
+		font-size: 1.4rem;
+		font-weight: bold;
+		color: #8d0101;
+		visibility: hidden;
+		transition: opacity 0.3s;
+
+		&--active {
+			opacity: 1;
+		}
+
+		&--active-visibility {
+			visibility: visible;
+		}
+	}
+
+	&__error-icon {
+		font-size: 1.6rem;
+	}
 }
 
 @media (min-width: 992px) {
 	.to-do-header {
 		gap: 2.5em 0;
-		margin-bottom: 3.5em;
 
 		&__heading {
 			font-size: 5rem;

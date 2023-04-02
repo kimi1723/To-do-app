@@ -89,6 +89,7 @@
 	}
 
 	&-hero-bg {
+		display: none;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -98,7 +99,7 @@
 	}
 
 	&--active {
-		display: grid;
+		// display: grid;
 		opacity: 1;
 	}
 }
