@@ -142,6 +142,8 @@ const showEditPanel = (): void => {
 
 	editAssignmentContainer.classList.add('to-do-edit-assignment--active');
 	heroBG.classList.add('to-do-edit-assignment-hero-bg--active');
+	editAssignmentContainer.classList.add('to-do-edit-assignment--active-visibility');
+	heroBG.classList.add('to-do-edit-assignment-hero-bg--active-visibility');
 };
 
 const hideEditPanel = (): void => {
@@ -149,7 +151,13 @@ const hideEditPanel = (): void => {
 
 	editAssignmentContainer.classList.remove('to-do-edit-assignment--active');
 	heroBG.classList.remove('to-do-edit-assignment-hero-bg--active');
+
+	setTimeout(() => {
+		editAssignmentContainer.classList.remove('to-do-edit-assignment--active-visibility');
+		heroBG.classList.remove('to-do-edit-assignment-hero-bg--active-visibility');
+	}, 400);
 };
+
 const loadStoragedToDos = () => {
 	const storagedToDos = { ...localStorage };
 
