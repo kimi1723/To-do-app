@@ -5,7 +5,7 @@
 	top: 50%;
 	left: 50%;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	gap: 0.4em 2em;
 	padding: 1.5em 3em;
 	width: 90%;
@@ -48,9 +48,25 @@
 		}
 	}
 
-	&__button {
+	&__error {
+		opacity: 0;
+		grid-column: 1 / -1;
 		grid-row: 3 / 4;
-		margin-top: 0.2em;
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: #ca3433;
+		text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+		visibility: hidden;
+		transition: opacity 0.3s;
+
+		&--active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__button {
+		grid-row: 4 / 5;
 		padding: 0.4em 0;
 		font-size: 2rem;
 		font-weight: bold;

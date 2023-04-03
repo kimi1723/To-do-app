@@ -1,12 +1,14 @@
 const toDoAssignmentsContainer = document.querySelector('.to-do-assignments') as HTMLDivElement;
 const editAssignmentContainer = document.querySelector('.to-do-edit-assignment') as HTMLDivElement;
 const heroBG = document.querySelector('.to-do-edit-assignment-hero-bg') as HTMLDivElement;
+const editError = document.querySelector('.to-do-edit-assignment__error') as HTMLParagraphElement;
 
 const toDoInput = document.querySelector('.to-do-header__input') as HTMLInputElement;
 const editInput = document.querySelector('.to-do-edit-assignment__input') as HTMLInputElement;
 const toDoAddBtn = document.querySelector('.to-do-header__add-button') as HTMLButtonElement;
 const acceptEditBtn = document.querySelector('.to-do-edit-assignment__button--accept') as HTMLButtonElement;
 const cancelEditBtn = document.querySelector('.to-do-edit-assignment__button--cancel') as HTMLButtonElement;
+
 let toDoAssignmentID: number = 1,
 	assignmentText: HTMLParagraphElement,
 	actualAssignment: HTMLDivElement,
@@ -112,12 +114,18 @@ const deleteToDo = (): void => {
 };
 
 const acceptEdit = (): void => {
-	assignmentText.textContent = editInput.value;
-	localStorage.setItem(assignmentID, actualAssignment.outerHTML);
-	hideEditPanel();
+	if (editInput.value !== '') {
+		assignmentText.textContent = editInput.value;
+		localStorage.setItem(assignmentID, actualAssignment.outerHTML);
+		editError.classList.remove('to-do-edit-assignment__error--active');
+		hideEditPanel();
+	} else {
+		editError.classList.add('to-do-edit-assignment__error--active');
+	}
 };
 
 const cancelEdit = (): void => {
+	editError.classList.remove('to-do-edit-assignment__error--active');
 	hideEditPanel();
 };
 
